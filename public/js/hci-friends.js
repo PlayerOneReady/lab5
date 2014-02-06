@@ -5,6 +5,8 @@ $(document).ready(function() {
 	initializePage();
 })
 
+$("a.naming").click(anagrammedName);
+
 /*
  * Function that is called when the document is ready.
  */
@@ -14,7 +16,10 @@ function initializePage() {
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
+	name.preventDefault();
+
+	name = $(this).text();
+
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
@@ -43,4 +48,5 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+
 }
